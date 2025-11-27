@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Consulta</title></head>
+<body><h2>Consultar Cliente</h2>
+<input id="idCliente" placeholder="ID"><button onclick="consultar()">Consultar</button>
+<p id="resultado"></p>
+<script>
+const API_URL="http://localhost:8000/api/clientes/";
+async function consultar(){
+const id=idCliente.value;
+const r=await fetch(API_URL+id,{headers:{"Authorization":"TOKEN123"}});
+document.getElementById("resultado").innerText="Resultado: "+JSON.stringify(await r.json());
+}
+</script></body></html>
