@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <h2>Cadastro de Cliente</h2>
+    <form id="formCadastro">
+      <label>Nome:</label><br /><input id="nome" /><br /><br />
+      <label>Email:</label><br /><input id="email" /><br /><br />
+      <label>CPF:</label><br /><input id="cpf" /><br /><br />
+      <button type="submit">Cadastrar</button>
+    </form>
+    <p id="resultado"></p>
+    <script>
+      const API_URL = "http://localhost:8000/api/clientes";
+      document
+        .getElementById("formCadastro")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const payload = {
+            nome: nome.value,
+            email: email.value,
+            cpf: cpf.value,
+          };
+          const r = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: "TOKEN123",
+            },
+            body: JSON.stringify(payload),
+          });
+          document.getElementById("resultado").innerText =
+            "Resultado: " + JSON.stringify(await r.json());
+        });
+    </script>
+  </body>
+</html>
