@@ -131,7 +131,7 @@ Exemplo:
 
 
 
-# 📌 **xml_utils.py — Conversão XML ↔ Dict**
+#  **xml_utils.py — Conversão XML ↔ Dict**
 
 * `dict_to_xml()` → transforma JSON/dict em XML
 * `xml_to_dict()` → transforma XML em dict
@@ -152,13 +152,13 @@ Vira XML:
 
 #  **2. Como rodar o projeto**
 
-### 1️⃣ Rodar o sistema legado:
+### 1️ Rodar o sistema legado:
 
 
 uvicorn legacy_system:legacy --port 9000
 
 
-### 2️⃣ Rodar o middleware:
+### 2️ Rodar o middleware:
 
 
 uvicorn main:app --reload
@@ -202,7 +202,7 @@ Content-Type: application/json
 
 
 
-# 🔍 **4. Como consultar um cliente**
+#  **4. Como consultar um cliente**
 
 ### **GET**
 
@@ -216,7 +216,7 @@ http://localhost:8000/api/clientes/1
 Authorization: TOKEN123
 
 
-### ✔ Resposta esperada:
+###  Resposta esperada:
 
 {
   "nome": "Maria Silva",
